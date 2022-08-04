@@ -1,0 +1,1 @@
+aws --profile UdacityAccountDemo cloudformation create-stack --stack-name ourdemoinfra --template-body file://project4.yml --parameters file://project4-parameters.json --capabilities "CAPABILITY_IAM" "CAPABILITY_NAMED_IAM" --region=us-east-1
