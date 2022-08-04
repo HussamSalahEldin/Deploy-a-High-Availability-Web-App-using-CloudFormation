@@ -270,8 +270,6 @@ Resources:
             Principal:
               Service: ec2.amazonaws.com
             Action: sts:AssumeRole
-      # ManagedPolicyArns:
-      # - arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore
       Path: "/"
 
   RolePolicies:
@@ -349,6 +347,7 @@ Resources:
           apt-get update -y
           apt-get install apache2 -y
           systemctl start apache2.service
+          #aws cli is not installed by default in the server, So I installed it manually
           sudo apt install awscli -y
           cd /var/www/html
           aws s3 cp s3://my-udagram-app/Assets/ . --recursive
